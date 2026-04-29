@@ -12,7 +12,8 @@ class PeliculasController extends Controller
      */
     public function index()
     {
-        //
+        $peliculas = Peliculas::all();
+        return response()->json($peliculas, 200);
     }
 
     /**
@@ -20,7 +21,8 @@ class PeliculasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $peliculas = Peliculas::create($request->all());
+        return response()->json($peliculas, 201);
     }
 
     /**

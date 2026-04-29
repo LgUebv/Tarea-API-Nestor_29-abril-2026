@@ -12,7 +12,8 @@ class RentasController extends Controller
      */
     public function index()
     {
-        //
+        $rentas = Rentas::all();
+        return response()->json($rentas, 200);
     }
 
     /**
@@ -20,7 +21,8 @@ class RentasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $rentas = Rentas::create($request->all());
+        return response()->json($rentas, 201);
     }
 
     /**
